@@ -2,7 +2,7 @@
 
 source ${EXPORTS_FILE}
 
-BOOTSTRAP_NAME="fpc-$BOOTSTRAP_VERSION-x86_64-linux"
+BOOTSTRAP_NAME="fpc-$BOOTSTRAP_VERSION.x86_64-linux"
 NEW_VERSION=$(echo "$TARGET_FPC_VERSION" | tr "." _)
 echo "New Version: $NEW_VERSION"
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-## Requirements:
-# subversion wget git clang cmake python 
+## If running in ubuntu-20:04 docker:
+# DEBIAN_FRONTEND="noninteractive" apt install -y tzdata subversion wget git clang cmake python libxml2-dev libssl-dev libz-dev libc++-dev
 
 ## Setup Parameters
-export BOOTSTRAP_VERSION='3.2.0'
-export TARGET_FPC_VERSION='3.2.2'
+export BOOTSTRAP_VERSION='3.0.4'
+export TARGET_FPC_VERSION='3.2.0'
 export BINUTILS_VERSION='2.37'
 
 export BUILD_DIR="$(pwd)/build/"
@@ -13,7 +13,6 @@ export EXPORTS_FILE="${BUILD_DIR}/exports"
 
 
 DOCKER_HUB_NAME='epidata/fpcbuild'
-
 
 scripts/setup.sh || exit 1
 scripts/binutils.sh || exit 1

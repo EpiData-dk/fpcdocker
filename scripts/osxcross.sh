@@ -18,7 +18,8 @@ git clone https://github.com/tpoechtrager/osxcross.git
 git clone https://github.com/phracker/MacOSX-SDKs.git
 pushd "MacOSX-SDKs" || exit
 mkdir -p "$SDK_NAME/usr/include/c++/v1/"
-cp -r /usr/include/c++/11.1.0/* "$SDK_NAME/usr/include/c++/v1/"
+CPP_VERSION=$(ls /usr/include/c++/ | head -n1)
+cp -r /usr/include/c++/${CPP_VERSION}/* "$SDK_NAME/usr/include/c++/v1/"
 tar -c -I 'xz -9 -T0' -f "$SDK_NAME_XZ" "$SDK_NAME"
 popd || exit
 

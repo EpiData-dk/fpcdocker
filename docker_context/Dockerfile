@@ -7,6 +7,8 @@ RUN apt update && \
     libgtk2.0-dev \
     clang \
     maven \
+    wget \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 COPY output/ /
 
