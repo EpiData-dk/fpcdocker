@@ -9,7 +9,10 @@ RUN apt update && \
     maven \
     wget \
     curl \
+    pip \
     && rm -rf /var/lib/apt/lists/*
+RUN pip install yq grip
+
 COPY output/ /
 
 RUN ldconfig

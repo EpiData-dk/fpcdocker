@@ -1,7 +1,9 @@
 #!/bin/bash
 
-## If running in ubuntu-20:04 docker:
-# DEBIAN_FRONTEND="noninteractive" apt install -y tzdata subversion wget git clang cmake python libxml2-dev libssl-dev libz-dev libc++-dev
+## If running in ubuntu:20.04 docker:
+# docker run -it --rm -v
+apt update
+DEBIAN_FRONTEND="noninteractive" apt install -y tzdata subversion wget git clang cmake python libxml2-dev libssl-dev libz-dev libc++-dev
 
 ## Setup Parameters
 export BOOTSTRAP_VERSION='3.0.4'
@@ -28,5 +30,5 @@ scripts/crossbuild.sh x86_64 darwin CROSSOPT="-XR${OSXCROSS_DIR}/SDK/MacOSX10.15
 scripts/linkfpc.sh || exit 1
 
 # docker build -t "${DOCKER_HUB_NAME}" docker_context
-# docker push -t "${DOCKER_HUB_NAME}:${TARGET_FPC_VERSION}"
+# docker push -t "${DOCKER_HUB_NAME}:${TARGET_FPC_VERSION}-14"
 # docker push -t "${DOCKER_HUB_NAME}:latest"
