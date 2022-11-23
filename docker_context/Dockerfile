@@ -10,8 +10,9 @@ RUN apt update && \
     wget \
     curl \
     pip \
+    jq \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install yq grip
+RUN pip3 install yq grip jinja2-cli
 
 COPY output/ /
 

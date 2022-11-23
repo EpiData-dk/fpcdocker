@@ -30,5 +30,5 @@ scripts/crossbuild.sh x86_64 darwin CROSSOPT="-XR${OSXCROSS_DIR}/SDK/MacOSX10.15
 scripts/linkfpc.sh || exit 1
 
 # docker build -t "${DOCKER_HUB_NAME}" docker_context
-# docker push -t "${DOCKER_HUB_NAME}:${TARGET_FPC_VERSION}-14"
+# docker push -t "${DOCKER_HUB_NAME}:${TARGET_FPC_VERSION}-15"
 # docker push -t "${DOCKER_HUB_NAME}:latest"
